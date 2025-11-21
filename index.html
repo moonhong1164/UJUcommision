@@ -499,6 +499,34 @@
       transform: translateY(0);
     }
 
+    /* 타로 종류 카드 */
+
+    .types-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 26px;
+      font-size: 0.82rem;
+    }
+
+    .type-card {
+      background-color: rgba(15, 23, 42, 0.98);
+      border-radius: 14px;
+      padding: 10px 10px 12px;
+      border: 1px solid rgba(148, 163, 184, 0.7);
+    }
+
+    .type-title {
+      font-size: 0.86rem;
+      margin-bottom: 4px;
+      font-weight: 600;
+    }
+
+    .type-text {
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
     /* 프로세스 */
 
     .steps {
@@ -690,6 +718,10 @@
       .two-column {
         grid-template-columns: 1fr;
       }
+
+      .types-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
     }
 
     @media (max-width: 640px) {
@@ -712,10 +744,18 @@
       .hero-title {
         font-size: 2rem;
       }
+
+      .types-grid {
+        grid-template-columns: 1fr 1fr;
+      }
     }
 
     @media (max-width: 480px) {
       .steps {
+        grid-template-columns: 1fr;
+      }
+
+      .types-grid {
         grid-template-columns: 1fr;
       }
     }
@@ -832,13 +872,13 @@
       <div class="container">
         <h2>리더 소개</h2>
         <p class="section-subtitle">
-          우주를 좋아하는 타로 리더, 우주의 코스믹 버전.
+          우주와 별을 좋아하는 타로 리더, 우주입니다.
         </p>
 
         <div class="about-layout">
           <div class="about-card">
             <div class="about-tag">Cosmic Tarot Reader</div>
-            <div class="about-name">우주 타로</div>
+            <div class="about-name">우주</div>
             <div class="about-note">
               별자리, 우주, 시간의 흐름 같은 이야기를 좋아합니다.<br />
               “지금 내가 어디쯤 와 있는지”를 같이 확인하는 리딩을 지향해요.<br />
@@ -880,68 +920,123 @@
       <div class="container">
         <h2>커미션 옵션 & 요금</h2>
         <p class="section-subtitle">
-          우주 타로는 텍스트 리딩 중심으로 진행됩니다. 아래 내용은 예시이니 운영 방식에 맞게 자유롭게 수정해 주세요.
+          시간별 상담과 개별 질문 리딩으로 진행됩니다.
         </p>
 
         <div class="cards-grid">
+          <!-- 15분 상담 -->
           <div class="price-card">
-            <div class="price-badge">Basic</div>
-            <div class="price-title">1질문 · 코스믹 리딩</div>
+            <div class="price-badge">15 min</div>
+            <div class="price-title">15분 채팅 상담</div>
             <div class="price-desc">
-              하나의 질문에 집중해 현재 흐름과 조언을 정리해 드립니다.
+              짧고 핵심적인 질문을 위한 간단 리딩입니다.
             </div>
-            <div class="price-value">예: 8,000원</div>
+            <div class="price-value">10,000원</div>
             <div class="price-meta">
-              · 카드 이미지 1~2장<br />
-              · 텍스트 리딩 약 600~800자
+              · 채팅 상담 15분<br />
+              · 핵심 카드 해석
             </div>
             <div class="price-small">
-              *지금 내가 맞는 방향으로 가고 있는지 체크하고 싶을 때
+              *간단한 고민, 빠른 리딩이 필요할 때
             </div>
             <div class="price-hover">
-              마우스를 올리면 보이는 추가 설명 ✨<br />
-              질문 예시 : “현재 이 관계를 계속 이어 가는 것이 좋을까요?”
+              현재 상황에 대한 1~2가지 핵심 메시지를 전달합니다.
             </div>
           </div>
 
+          <!-- 20분 상담 -->
           <div class="price-card">
-            <div class="price-badge">Deep</div>
-            <div class="price-title">심화 리딩 · 2~3질문</div>
+            <div class="price-badge">20 min</div>
+            <div class="price-title">20분 채팅 상담</div>
             <div class="price-desc">
-              서로 연결된 주제(연애+진로 등)를 함께 묶어서 보는 리딩입니다.
+              흐름과 조언을 조금 더 깊이 봅니다.
             </div>
-            <div class="price-value">예: 18,000원</div>
+            <div class="price-value">15,000원</div>
             <div class="price-meta">
-              · 카드 이미지 여러 장<br />
-              · 텍스트 리딩 약 1,500자 내외
+              · 채팅 상담 20분<br />
+              · 카드 다수 사용
             </div>
             <div class="price-small">
-              *흐름·상대 마음·앞으로의 선택지를 종합적으로 보고 싶을 때
+              *조금 더 구체적인 상황일 때
             </div>
             <div class="price-hover">
-              예시 : “지금 다니는 학교(직장)를 계속 다녀도 될지, 다른 선택지가 있을지” 등<br />
-              “지금 흐름에서 3~6개월의 방향성”을 함께 봅니다.
+              관계 / 진로 / 감정 흐름을 종합적으로 해석합니다.
             </div>
           </div>
 
+          <!-- 30분 상담 -->
           <div class="price-card">
-            <div class="price-badge">Spread</div>
-            <div class="price-title">맞춤 스프레드 · 기간 리딩</div>
+            <div class="price-badge">30 min</div>
+            <div class="price-title">30분 채팅 상담</div>
             <div class="price-desc">
-              한 달 / 한 학기 / 특정 프로젝트 기간 등<br />
-              시간대별 흐름을 나눠서 보는 리딩입니다.
+              가장 깊고 넓은 범위의 리딩입니다.
             </div>
-            <div class="price-value">예: 22,000원~</div>
+            <div class="price-value">20,000원</div>
             <div class="price-meta">
-              · 카드 구성은 사전 상담 후 결정<br />
-              · 분량에 따라 금액 변동
+              · 심층 채팅 상담 30분<br />
+              · 다중 스프레드
             </div>
             <div class="price-small">
-              *월간 운세, 시험/프로젝트 기간 등 장기 흐름에 적합
+              *전반적인 흐름, 장기적 방향
             </div>
             <div class="price-hover">
-              “이번 학기 전반적인 흐름 + 조심할 점 + 성장 포인트” 같은 느낌으로<br />
-              전체 지도를 그리듯 함께 살펴봅니다.
+              과거-현재-미래 흐름까지 함께 보는 심화 리딩입니다.
+            </div>
+          </div>
+
+          <!-- 개별 질문 -->
+          <div class="price-card">
+            <div class="price-badge">QnA</div>
+            <div class="price-title">개별 질문</div>
+            <div class="price-desc">
+              질문 하나에 하나의 집중 리딩을 진행합니다.
+            </div>
+            <div class="price-value">한 질문당 5,000원</div>
+            <div class="price-meta">
+              · 단일 질문 집중<br />
+              · 카드 + 텍스트
+            </div>
+            <div class="price-small">
+              *짧고 명확한 질문일 때 추천
+            </div>
+            <div class="price-hover">
+              질문이 많아질 경우 문의 후 시간제 상담으로 조정 가능합니다.
+            </div>
+          </div>
+        </div>
+
+        <!-- 타로 종류별 안내 -->
+        <div class="section-subtitle" style="margin-top:28px;">
+          모든 메뉴에서 아래 타로 종류 중 하나를 선택하실 수 있습니다. (추가 금액 없음)
+        </div>
+
+        <div class="types-grid">
+          <div class="type-card">
+            <div class="type-title">연애 · 관계 타로</div>
+            <div class="type-text">
+              썸, 연애, 재회, 친구·가족과의 관계 등<br />
+              나와 상대의 마음, 앞으로의 가능성을 중심으로 봅니다.
+            </div>
+          </div>
+          <div class="type-card">
+            <div class="type-title">진로 · 학업 타로</div>
+            <div class="type-text">
+              전공 선택, 이직, 진학, 시험 준비 등<br />
+              나에게 맞는 방향성과 준비해야 할 포인트를 짚어 봅니다.
+            </div>
+          </div>
+          <div class="type-card">
+            <div class="type-title">금전 · 현실 타로</div>
+            <div class="type-text">
+              알바·직장·수입 구조, 소비 패턴 등<br />
+              현실적인 흐름과 조심해야 할 부분을 함께 살펴봅니다.
+            </div>
+          </div>
+          <div class="type-card">
+            <div class="type-title">내면 · 힐링 타로</div>
+            <div class="type-text">
+              번아웃, 자존감, 반복되는 패턴 등<br />
+              내 마음의 상태와 회복을 위한 메시지를 받아봅니다.
             </div>
           </div>
         </div>
@@ -1027,7 +1122,7 @@
     <section id="faq">
       <div class="container">
         <h2>안내사항 & FAQ</h2>
-        <p class="section-subtitle">
+      <p class="section-subtitle">
           우주 타로를 신청하시기 전에 한 번만 읽어 주시면 좋아요.
         </p>
 
@@ -1088,12 +1183,13 @@
             <ul class="about-list">
               <li>① 이름(또는 닉네임) :</li>
               <li>② 연락 가능한 채널 (카톡 ID / 이메일 등) :</li>
-              <li>③ 희망 옵션 (예: 1질문 / 심화 리딩 등) :</li>
-              <li>④ 질문 내용 (가능한 한 구체적으로) :</li>
-              <li>⑤ 희망 전달 기한 (급한 경우 표시) :</li>
+              <li>③ 희망 옵션 (예: 15분 / 20분 / 30분 / 개별 질문) :</li>
+              <li>④ 타로 종류 (연애/진로/금전/내면 중 택1) :</li>
+              <li>⑤ 질문 내용 (가능한 한 구체적으로) :</li>
+              <li>⑥ 희망 전달 기한 (급한 경우 표시) :</li>
             </ul>
             <p class="about-highlight" style="margin-top:12px;">
-              문의 및 신청은 월홍의 카카오톡 채널 또는 프로필에 안내된 연락처를 이용해 주세요.
+              문의 및 신청은 우주의 카카오톡 채널 또는 프로필에 안내된 연락처를 이용해 주세요.
             </p>
           </div>
 
@@ -1104,7 +1200,7 @@
           <div class="request-links">
             <!-- 카카오톡 오픈채팅 링크 -->
             <a class="link-chip" href="https://open.kakao.com/o/sMlOwxkd" target="_blank" rel="noopener">
-              💬 월홍 카카오톡 오픈채팅
+              💬 우주 타로 카카오톡 오픈채팅
             </a>
           </div>
 
@@ -1120,10 +1216,10 @@
   <footer>
     <div class="container footer-inner">
       <div>
-        © <span id="year"></span> 우주 타로 · 월홍. All rights reserved.
+        © <span id="year"></span> 우주 타로. All rights reserved.
       </div>
       <div>
-        제작 : 월홍🌙 · 메인 커미션 : 월홍타로 / 코스믹 버전 : 우주 타로
+        제작 : 우주🌌
       </div>
     </div>
   </footer>
